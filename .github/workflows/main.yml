@@ -1,0 +1,19 @@
+name: C1
+
+#Control
+on:
+#push and pull ma solo su main
+ push:
+   branches: [ main ]
+ pull_request:
+   branches: [ main ]
+#Permette di lanciarlo manualmente dalla Action tab
+ workflow_dispatch:
+
+jobs:
+ build:
+   runs-on: ubuntu-latest
+   steps:
+     - uses: actions/checkout@v2 #checkout la mia repository su GIT_HUB e ci lavora dentro
+     - name: Run uno script di un solo rigo da shell
+       run: echo Hello, World! 
